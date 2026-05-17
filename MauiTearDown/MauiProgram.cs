@@ -1,4 +1,6 @@
-﻿using CommunityToolkit.Maui;
+﻿// MauiProgram.cs
+
+using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
 
 namespace MauiTearDown;
@@ -27,7 +29,7 @@ public static class MauiProgram
         builder.Services.AddTransient<StartPage>();
         builder.Services.AddTransient<MainPage>();
         builder.Services.AddTransient<ThirdPage>();
-        builder.Services.AddSingleton<CustomButtonDiagnostics>();
+        builder.Services.AddSingleton<CustomDiagnostics>();
 
         return builder.Build();
     }

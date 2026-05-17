@@ -5,7 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MauiTearDown"
     Title="StartPage"
-    x:DataType="local:CustomButtonDiagnostics">
+    x:DataType="local:CustomDiagnostics">
 
     <VerticalStackLayout Spacing="50" VerticalOptions="Center">
         <Button
@@ -35,8 +35,8 @@
             Padding="10"
             HorizontalOptions="Center"
             Spacing="10">
-            <Label Text="{Binding CustomButtonConstructedCount, StringFormat='Custom Buttons Constructed: {0}'}" />
-            <Label Text="{Binding CustomButtonLoadedCount, StringFormat='Custom Buttons Loaded: {0}'}" />
+            <Label Text="{Binding CustomLabelConstructedCount, StringFormat='Custom Labels Constructed: {0}'}" />
+            <Label Text="{Binding CustomLabelLoadedCount, StringFormat='Custom Labels Loaded: {0}'}" />
         </VerticalStackLayout>
     </VerticalStackLayout>
 

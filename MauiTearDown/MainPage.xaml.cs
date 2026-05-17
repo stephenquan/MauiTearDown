@@ -7,12 +7,12 @@ namespace MauiTearDown;
 
 public partial class MainPage : ContentPage
 {
-    public CustomButtonDiagnostics ButtonDiagnostics { get; }
+    public CustomDiagnostics Diagnostics { get; }
     public ObservableCollection<CityInfo> Cities { get; } = new();
 
-    public MainPage(CustomButtonDiagnostics diagnostics)
+    public MainPage(CustomDiagnostics diagnostics)
     {
-        ButtonDiagnostics = diagnostics;
+        Diagnostics = diagnostics;
         BindingContext = this;
         InitializeComponent();
     }
@@ -23,6 +23,7 @@ public partial class MainPage : ContentPage
 
     void OnAdd(object? sender, EventArgs e)
     {
+        int id = Cities.Count + 1;
         string cityName =
             new StringBuilder()
             .Append(cityPrefixes[Random.Shared.Next(cityPrefixes.Length)])
@@ -30,7 +31,8 @@ public partial class MainPage : ContentPage
             .Append(cityNames[Random.Shared.Next(cityNames.Length)])
             .Append(citySuffixes[Random.Shared.Next(citySuffixes.Length)])
             .ToString();
-        Cities.Add(new CityInfo { Id = Cities.Count + 1, Name = cityName });
+        decimal tradeBalance = (decimal)(Random.Shared.NextDouble() * 1000000 - 500000);
+        Cities.Add(new CityInfo { Id = id, Name = cityName, TradeBalance = tradeBalance });
     }
 
     void OnRemove(object? sender, EventArgs e)

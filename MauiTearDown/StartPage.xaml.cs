@@ -4,7 +4,7 @@ namespace MauiTearDown;
 
 public partial class StartPage : ContentPage
 {
-    public StartPage(CustomButtonDiagnostics diagnostics)
+    public StartPage(CustomDiagnostics diagnostics)
     {
         BindingContext = diagnostics;
         InitializeComponent();

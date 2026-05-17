@@ -1,8 +1,10 @@
+// ThirdPage.xaml.cs
+
 namespace MauiTearDown;
 
 public partial class ThirdPage : ContentPage
 {
-    public ThirdPage(CustomButtonDiagnostics diagnostics)
+    public ThirdPage(CustomDiagnostics diagnostics)
     {
         BindingContext = diagnostics;
         InitializeComponent();
