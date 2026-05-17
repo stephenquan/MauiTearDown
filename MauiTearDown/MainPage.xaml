@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MauiTearDown.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MauiTearDown"
+    Title="MainPage"
+    x:DataType="local:MainPage">
+
+    <Grid
+        Padding="10"
+        RowDefinitions="*,Auto,Auto"
+        RowSpacing="10">
+        <CollectionView ItemsSource="{Binding Cities}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="local:CityInfo">
+                    <Grid
+                        Padding="0,0,0,10"
+                        ColumnDefinitions="Auto,*,Auto"
+                        ColumnSpacing="10">
+                        <Label Text="{Binding Id}" />
+                        <Label Grid.Column="1" Text="{Binding Name}" />
+                        <local:CustomButton
+                            Grid.Column="2"
+                            Style="{StaticResource MyButtonStyle}"
+                            Text="TBA" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <VerticalStackLayout Grid.Row="1" Spacing="10">
+            <Label Text="{Binding ButtonDiagnostics.CustomButtonConstructedCount, StringFormat='Custom Buttons Constructed: {0}'}" />
+            <Label Text="{Binding ButtonDiagnostics.CustomButtonLoadedCount, StringFormat='Custom Buttons Loaded: {0}'}" />
+            <Label Text="{Binding Cities.Count, StringFormat='Total Cities: {0}'}" />
+        </VerticalStackLayout>
+        <FlexLayout Grid.Row="2">
+            <Button Clicked="OnAdd" Text="Add" />
+            <ContentView HeightRequest="50" WidthRequest="10" />
+            <Button Clicked="OnRemove" Text="Remove" />
+            <ContentView HeightRequest="50" WidthRequest="10" />
+            <Button Clicked="OnNext" Text="Next Page" />
+            <ContentView HeightRequest="50" WidthRequest="10" />
+            <Button Clicked="OnGC" Text="GC" />
+        </FlexLayout>
+    </Grid>
+
+</ContentPage>

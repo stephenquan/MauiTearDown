@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MauiTearDown.StartPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MauiTearDown"
+    Title="StartPage"
+    x:DataType="local:CustomButtonDiagnostics">
+
+    <VerticalStackLayout Spacing="50" VerticalOptions="Center">
+        <Button
+            BackgroundColor="Green"
+            Clicked="OnStart"
+            CornerRadius="0"
+            FontSize="20"
+            HeightRequest="50"
+            HorizontalOptions="Center"
+            Text="Start"
+            TextColor="White"
+            VerticalOptions="Center"
+            WidthRequest="150">
+            <Button.Clip>
+                <PathGeometry>
+                    <PathFigure IsClosed="True" StartPoint="0,25">
+                        <LineSegment Point="25,0" />
+                        <LineSegment Point="125,0" />
+                        <LineSegment Point="150,25" />
+                        <LineSegment Point="125,50" />
+                        <LineSegment Point="25,50" />
+                    </PathFigure>
+                </PathGeometry>
+            </Button.Clip>
+        </Button>
+        <VerticalStackLayout
+            Padding="10"
+            HorizontalOptions="Center"
+            Spacing="10">
+            <Label Text="{Binding CustomButtonConstructedCount, StringFormat='Custom Buttons Constructed: {0}'}" />
+            <Label Text="{Binding CustomButtonLoadedCount, StringFormat='Custom Buttons Loaded: {0}'}" />
+        </VerticalStackLayout>
+    </VerticalStackLayout>
+
+</ContentPage>

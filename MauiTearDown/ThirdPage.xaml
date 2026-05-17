@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MauiTearDown.ThirdPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MauiTearDown"
+    Title="ThirdPage"
+    x:DataType="local:CustomButtonDiagnostics">
+    <VerticalStackLayout
+        Padding="10"
+        HorizontalOptions="Center"
+        Spacing="10"
+        VerticalOptions="Center">
+        <Label Text="{Binding CustomButtonConstructedCount, StringFormat='Custom Buttons Constructed: {0}'}" />
+        <Label Text="{Binding CustomButtonLoadedCount, StringFormat='Custom Buttons Loaded: {0}'}" />
+    </VerticalStackLayout>
+</ContentPage>
